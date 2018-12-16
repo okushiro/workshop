@@ -17,10 +17,9 @@ $('#reset').click(function() {
 
 function make() {
     var sticky = $('<div class="sticky"></div>');
-    console.log("makeが動いてる");
     sticky.appendTo('body')
     .css('background-color', $('#color').val())
-    .draggable({stop: {save, out}})
+    .draggable({stop: saveout})
     .dblclick(function() {
         $(this).html('<textarea>' + $(this).html() + '</textarea>')
         .children()
@@ -37,7 +36,19 @@ function make() {
     return sticky;
 }
 
-function out(){
+function saveout(){
+    var items = [];
+    $('.sticky').each(function() {
+      items.push({
+        css: {
+          left: $(this).css('left'),
+          top: $(this).css('top'),
+          backgroundColor: $(this).css('background-color')
+        },
+        html: $(this).html()
+      });
+    });
+    newPostRef.set(JSON.stringify(items));
     $('.selected').remove();
 }
 
@@ -54,7 +65,6 @@ function save(){
       });
     });
     newPostRef.set(JSON.stringify(items));
-    console.log("saveが動いてる");
 }
     
 newPostRef.on('value', function(data){
