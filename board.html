@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ワークショップアプリ</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1 class="title">ぶれすと！</h1>
+<select id="color">
+<option value="#ffc">黄色</option>
+<option value="#fcc">赤色</option>
+<option value="#cfc">緑色</option>
+</select>
+<input id="new" type="button" value="new">
+<input id="del" type="button" value="delete">
+<input id="reset" type="button" value="reset">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="js/autosize.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA3cIR9Zpq9RD-pkahVkcYoCm7HQ_4V6BI",
+        authDomain: "workshop-13270.firebaseapp.com",
+        databaseURL: "https://workshop-13270.firebaseio.com",
+        projectId: "workshop-13270",
+        storageBucket: "workshop-13270.appspot.com",
+        messagingSenderId: "241597129423"
+    };
+    firebase.initializeApp(config);
+
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
