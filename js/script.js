@@ -16,7 +16,7 @@ $('#reset').click(function() {
 });
 
 function make() {
-    var sticky = $('<div class="sticky">Drag & Double Click!</div>');
+    var sticky = $('<div class="sticky"></div>');
     console.log("makeが動いてる");
     sticky.appendTo('body')
     .css('background-color', $('#color').val())
